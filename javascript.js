@@ -13,10 +13,14 @@ var userNumbers = [];   // questo array contiene i numeri inseriti tramite il pr
 var wrongUserNumbers = [];  // in questo array devono essere pushati tutti i numeri inseriti dall'utente che non corrispondono a quelli generati dal computer
 
 // creo un alert che esponga 5 numeri generati casualmente
-for (var i = 0; i < 5; i++) {
+while (randomNumbers.length <= 5){
     var correctNumbers = Math.floor(Math.random() * 5);
-    randomNumbers.push(correctNumbers);
+    if (!randomNumbers.includes(correctNumbers)){
+        randomNumbers.push(correctNumbers);
+    } 
+    console.log("ciao")
 }
+
 
 alert("Questi sono i numeri che devi ricordare" + randomNumbers);
 
