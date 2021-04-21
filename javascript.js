@@ -13,12 +13,11 @@ var userNumbers = [];   // questo array contiene i numeri inseriti tramite il pr
 var wrongUserNumbers = [];  // in questo array devono essere pushati tutti i numeri inseriti dall'utente che non corrispondono a quelli generati dal computer
 
 // creo un alert che esponga 5 numeri generati casualmente
-while (randomNumbers.length <= 5){
+while (randomNumbers.length < 5){
     var correctNumbers = Math.floor(Math.random() * 5);
-    if (!randomNumbers.includes(correctNumbers)){
+    if (randomNumbers.indexOf(correctNumbers) == -1){
         randomNumbers.push(correctNumbers);
     } 
-    console.log("ciao")
 }
 
 
@@ -35,6 +34,7 @@ setTimeout(function() {
             wrongUserNumbers.push(inputNumber);
         }
     }
+    // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
     document.getElementById("results").innerHTML = "i numeri iniziali erano " + randomNumbers + " i numeri corretti inseriti sono " + userNumbers + " mentre quelli che hai inserito errati sono " + wrongUserNumbers;
 },3000)
 
